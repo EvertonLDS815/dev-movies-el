@@ -1,4 +1,3 @@
-
 function Series() {
   return (
     <div>

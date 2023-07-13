@@ -1,4 +1,3 @@
-
 function Movies() {
   return (
     <div>
