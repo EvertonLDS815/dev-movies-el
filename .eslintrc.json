@@ -17,18 +17,6 @@
   },
   "plugins": ["react", "react-hooks", "eslint-plugin-import-helpers"],
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "printWidth": 80,
-        "tabWidth": 2,
-        "singleQuote": true, // aspas simples
-        "trailingComma": "none", // virgula no fim da linha
-        "arrowParens": "always",
-        "semi": false, // ponto e virgula no fim da linha
-        "endOfLine": "auto"
-      }
-    ],
     "react/react-in-jsx-scope": "off",
     "space-before-function-paren": "off",
     "react/prop-types": "off",
