@@ -17,15 +17,32 @@ export const Container = styled.div`
 export const Menu = styled.ul`
   display: flex;
   list-style: none;
-  gap: 40px;
+  gap: 35px;
 `
 export const Li = styled.li`
   font-weight: 600;
   cursor: pointer;
+  position: relative;
 
   a {
     text-decoration: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  &::after {
+    content: '';
+    height: 4px;
+    width: ${(props) => (props.isActive ? '100%' : 0)};
+    background-color: #189b20;
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.5s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 `
