@@ -7,6 +7,7 @@ import { Background, Container, Info, Poster, ContainerButtons } from './style'
 import { useState, useEffect } from 'react'
 
 function Home() {
+  const [showModal, setShowModal] = useState(false)
   const [movie, setMovie] = useState('')
   const [topMovies, setTopMovies] = useState('')
   const [topSeries, setTopSeries] = useState('')
@@ -60,14 +61,14 @@ function Home() {
         <Background
           img={getImages(movie.backdrop_path)}
         >
-          <Modal movieId={movie.id} />
+          {showModal && <Modal movieId={movie.id} setShowModal={setShowModal} />}
           <Container>
             <Info>
               <h1>{movie.title}</h1>
               <p>{movie.overview}</p>
               <ContainerButtons>
                 <Button red>Assita agora</Button>
-                <Button>Assista o Trailer</Button>
+                <Button onClick={() => setShowModal(true)}>Assista o Trailer</Button>
               </ContainerButtons>
             </Info>
             <Poster>
