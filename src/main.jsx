@@ -5,10 +5,12 @@ import Router from './routes/routes'
 import GlobalStyle from './styles/GlobalStyles'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <>
     <BrowserRouter>
       <Router />
     </BrowserRouter>
     <GlobalStyle />
-  </React.StrictMode>
+  </>
+  // </React.StrictMode>
 )

@@ -1,14 +1,23 @@
 import { Container, Menu, Li } from './style'
 import { Link, useLocation } from 'react-router-dom'
 import Logo from "../../assets/logo.png"
+import { useState } from 'react';
 function Header() {
+  const [changedBackground, setChangedBackground] = useState(false);
 
   const { pathname } = useLocation()
 
-  console.log(pathname)
+  window.onscroll = () => {
+    if (!changedBackground && window.scrollY > 150) {
+      setChangedBackground(true);
+    }
+    if (changedBackground && window.scrollY <= 150) {
+      setChangedBackground(false);
+    }
+  }
   return (
     <>
-      <Container>
+      <Container changedBackground={changedBackground}>
         <img src={Logo} alt="logo" />
         <Menu>
           <Li isActive={pathname === '/'}><Link to="/">Home</Link></Li>
