@@ -1,4 +1,5 @@
 import Button from '../../components/Button'
+import Modal from '../../components/Modal'
 import Slider from '../../components/Slider'
 import api from '../../services/api'
 import { getImages } from '../../services/utils/getImages'
@@ -43,7 +44,6 @@ function Home() {
       const {
         data: { results }
       } = await api.get('/person/popular')
-      console.log(results)
       setTopPeople(results)
     }
 
@@ -60,6 +60,7 @@ function Home() {
         <Background
           img={getImages(movie.backdrop_path)}
         >
+          <Modal movieId={movie.id} />
           <Container>
             <Info>
               <h1>{movie.title}</h1>
