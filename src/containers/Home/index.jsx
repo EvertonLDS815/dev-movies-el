@@ -6,6 +6,8 @@ import { getImages } from '../../services/utils/getImages'
 import { Background, Container, Info, Poster, ContainerButtons } from './style'
 import { useState, useEffect } from 'react'
 import { getMovies, getPopularSeries, getTopMovies, getTopPeople, getTopSeries } from '../../services/getData'
+
+
 function Home() {
   const [showModal, setShowModal] = useState(false)
   const [movie, setMovie] = useState('')
@@ -30,8 +32,6 @@ function Home() {
       setTopPeople(topPeople)
     }).catch(err => console.error(err))
 
-
-    getAllData()
   }, [])
   return (
     <>
