@@ -16,7 +16,6 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.time('time')
     Promise.all([
       getMovies(),
       getTopMovies(),
@@ -31,7 +30,6 @@ function Home() {
       setTopPeople(topPeople)
     }).catch(err => console.error(err))
 
-    console.timeEnd('time')
 
     getAllData()
   }, [])
