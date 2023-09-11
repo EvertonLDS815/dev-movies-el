@@ -1,7 +1,11 @@
 import { Container, Background } from './style'
 import { useEffect, useState } from 'react'
+<<<<<<< HEAD
 import { getMovie } from '../../services/getData'
 function Modal({ movieId, setShowModal }) {
+=======
+function Modal({ movieId }) {
+>>>>>>> parent of f7a09ac (feat: rest and Modal usestate props part 2)
   const [movie, setMovie] = useState("")
 
   useEffect(() => {
@@ -12,7 +16,7 @@ function Modal({ movieId, setShowModal }) {
     getMovies()
   }, [])
   return (
-    <Background onClick={() => setShowModal(false)}>
+    <Background>
       {movie && (
         <Container>
           <iframe
