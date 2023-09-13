@@ -5,7 +5,7 @@ export async function getMovies() {
     data: { results }
   } = await api.get('/movie/popular')
 
-  return results[5]
+  return results[6]
 }
 export async function getTopMovies() {
   const {
