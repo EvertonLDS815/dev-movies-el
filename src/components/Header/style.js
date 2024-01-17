@@ -10,8 +10,7 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: 10px 20px;
   max-width: 100vw;
-  background-color: ${(props) =>
-    props.changedBackground ? '#000' : 'transparent'};
+  background-color: ${(props) => (props.changedBackground ? '#000' : 'transparent')};
   transition: background-color 800ms ease-in-out;
   img {
     width: 25%;
@@ -36,7 +35,7 @@ export const Li = styled.li`
   &::after {
     content: '';
     height: 4px;
-    width: ${(props) => (props.isActive ? '100%' : 0)};
+    width: ${(props) => (props.isactive ? '100%' : 0)};
     background-color: #189b20;
     position: absolute;
     bottom: -7px;

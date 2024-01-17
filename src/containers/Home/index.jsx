@@ -37,20 +37,32 @@ function Home() {
 
     getAllData()
   }, [])
+
+  function showTrailer() {
+    setShowModal(true);
+  }
+  function unShowTrailer() {
+    setShowModal(false);
+  }
   return (
     <>
       {movie && (
         <Background
           img={getImages(movie.backdrop_path)}
         >
-          {showModal && <Modal movieId={movie.id} setShowModal={setShowModal} />}
+          {showModal && 
+          <Modal
+            movieId={movie.id}
+            getShowModal={showTrailer} 
+            getUnShowModal={unShowTrailer} 
+            />}
           <Container>
             <Info>
               <h1>{movie.title}</h1>
               <p>{movie.overview}</p>
               <ContainerButtons>
                 <Button red onClick={() => navigate(`/detalhe/${movie.id}`)}>Assita agora</Button>
-                <Button onClick={() => setShowModal(true)}>Assista o Trailer</Button>
+                <Button onClick={showTrailer}>Assista o Trailer</Button>
               </ContainerButtons>
             </Info>
             <Poster>
