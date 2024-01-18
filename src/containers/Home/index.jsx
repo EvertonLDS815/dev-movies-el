@@ -48,7 +48,7 @@ function Home() {
     <>
       {movie && (
         <Background
-          img={getImages(movie.backdrop_path)}
+          imagePath={getImages(movie.backdrop_path)}
         >
           {showModal && 
           <Modal
